@@ -5,6 +5,7 @@ import com.football_bingo.Football.Bingo.Service.entity.Player;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,6 +17,14 @@ public class TeammateMapper {
 
     public TeammateDto toDto(Player teammate) {
         return new TeammateDto(teammate.getId(), teammate.getName());
+    }
+
+    public List<TeammateDto> toDtoList(List<Player> players) {
+        return players != null
+                ? players.stream()
+                    .map(this::toDto)
+                    .collect(Collectors.toList())
+                : Collections.emptyList();
     }
 
     public List<TeammateDto> toDtoList(List<Player> directTeammates, List<Player> inverseTeammates) {

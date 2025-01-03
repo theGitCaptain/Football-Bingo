@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,4 +21,7 @@ public class Achievement {
     private String name;
 
     private String imageUrl;
+
+    @ManyToMany(mappedBy = "achievements")
+    private List<Player> players;
 }

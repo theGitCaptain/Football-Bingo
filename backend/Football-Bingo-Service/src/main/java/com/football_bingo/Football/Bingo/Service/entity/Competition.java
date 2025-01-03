@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -19,4 +21,7 @@ public class Competition {
     private String id;
 
     private String name;
+
+    @ManyToMany(mappedBy = "competitions")
+    private Set<Player> players;
 }

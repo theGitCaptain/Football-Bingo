@@ -4,6 +4,7 @@ import com.football_bingo.Football.Bingo.Service.dto.achievement.AchievementSumm
 import com.football_bingo.Football.Bingo.Service.dto.city.CitySummaryDto;
 import com.football_bingo.Football.Bingo.Service.dto.club.ClubSummaryDto;
 import com.football_bingo.Football.Bingo.Service.dto.coach.CoachSummaryDto;
+import com.football_bingo.Football.Bingo.Service.dto.competition.CompetitionSummaryDto;
 import com.football_bingo.Football.Bingo.Service.dto.foot.FootSummaryDto;
 import com.football_bingo.Football.Bingo.Service.dto.nation.NationSummaryDto;
 import lombok.AllArgsConstructor;
@@ -39,4 +40,5 @@ public class PlayerDto {
     private List<AchievementSummaryDto> achievements;
     private List<CoachSummaryDto> coaches;
     private List<TeammateDto> teammates;
+    private List<CompetitionSummaryDto> competitions;
 }

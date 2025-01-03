@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -23,6 +24,10 @@ public class Coach {
 
     private String imageUrl;
 
+    private Boolean enabled;
+
+    private LocalDateTime lastIterated;
+
     @ManyToMany(mappedBy = "coaches")
-    private List<Player> playersCoached;
+    private List<Player> players;
 }

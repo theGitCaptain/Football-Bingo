@@ -8,12 +8,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
+@Entity
+@Table(name = "players")
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "players")
 public class Player {
 
     @Id
@@ -97,4 +98,12 @@ public class Player {
             inverseJoinColumns = @JoinColumn(name = "player1_id")
     )
     private List<Player> inverseTeammates;
+
+    @ManyToMany
+    @JoinTable(
+            name = "players_stats",
+            joinColumns = @JoinColumn(name = "player_id"),
+            inverseJoinColumns = @JoinColumn(name = "competition_id")
+    )
+    private Set<Competition> competitions;
 }

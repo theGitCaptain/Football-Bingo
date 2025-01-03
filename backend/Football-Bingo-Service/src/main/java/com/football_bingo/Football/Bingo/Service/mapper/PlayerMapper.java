@@ -7,6 +7,8 @@ import com.football_bingo.Football.Bingo.Service.entity.Player;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @Component
 @AllArgsConstructor
 public class PlayerMapper {
@@ -16,6 +18,7 @@ public class PlayerMapper {
     private AchievementMapper achievementMapper;
     private CoachMapper coachMapper;
     private TeammateMapper teammateMapper;
+    private CompetitionMapper competitionMapper;
 
     public PlayerDto toDto(Player player) {
         return new PlayerDto(
@@ -37,7 +40,8 @@ public class PlayerMapper {
                 nationMapper.toSummaryDtoList(player.getCitizenships()),
                 achievementMapper.toSummaryDtoList(player.getAchievements()),
                 coachMapper.toSummaryDtoList(player.getCoaches()),
-                teammateMapper.toDtoList(player.getDirectTeammates(), player.getInverseTeammates())
+                teammateMapper.toDtoList(player.getDirectTeammates(), player.getInverseTeammates()),
+                competitionMapper.toSummaryDtoList(new ArrayList<>(player.getCompetitions()))
         );
     }
 }
