@@ -1,10 +1,14 @@
 package com.football_bingo.Football.Bingo.Service.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "nations")
@@ -20,4 +24,7 @@ public class Nation {
 
     @OneToMany(mappedBy = "nation")
     private List<City> cities;
+
+    @ManyToMany(mappedBy = "citizenships")
+    private List<Player> players;
 }
