@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #fa9144;
+  padding: 10px;
+  gap: 15px;
+  align-items: center;
+}
+
+.header img {
+  height: 50px;
+}
+
+.titleStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleStack h1 {
+  line-height: 1;
+}
